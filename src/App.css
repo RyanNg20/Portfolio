@@ -5,7 +5,7 @@
 }
 @font-face {
     font-family: Roboto;
-    src: url(../fonts/Roboto-Thin.ttf)
+    src: url(../fonts/Roboto-Light.ttf)
 }
 /* width */
 ::-webkit-scrollbar {
@@ -21,13 +21,7 @@
 ::-webkit-scrollbar-thumb {
     background: transparent;
 }
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: transparent;
-}
 .App {
-    /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../public/images/project.jpg); */
     background-color: var(--background);
     background-size: cover;
     height: 100vh;
@@ -58,16 +52,17 @@
 .scrollbox {
     font-size: 30px;
     font-weight: 100;
-    background: rgba(31,31,31, 0.5);
+    background: linear-gradient(transparent 30%, rgba(31,31,31, 0.8) 50%, transparent 70%);
     height: 100%;
     overflow-y: scroll;
-    padding: 0px 10px 0px 15px;
 }
 .title {
     text-align: center;
     font-size: 30px;
     font-weight: 100;
-    margin: 100px 0px;
+    margin: 100px 0px 100px 0px;
+    padding: 0px 10px 0px 15px;
+    /* background-color: orange; */
     /* -webkit-text-fill-color: transparent;
     -webkit-background-clip: text; */
 }
