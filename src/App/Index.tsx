@@ -1,6 +1,9 @@
 import { useEffect, useState, } from 'react';
 import { AppStyle, Link} from './Style'
 import Tutorial from '../pages/Tutorial';
+import Projects from '../pages/Projects';
+import Side from '../components/Side';
+import { Background } from '../components/Style';
 
 function App() {
   document.body.style.overflow = "hidden"
@@ -66,45 +69,48 @@ function App() {
   );
 
   return (
-    <AppStyle
-      XPosition={position[0] * 100 / NXSlides}
-      YPosition={position[1] * 100 / NYSlides}
-      width={NXSlides * 100}
-      height={NYSlides * 100}
-      onKeyDown={() => {console.log('hi')}}
-    >
-      <div style={{backgroundColor: 'black'}} />
-      <div style={{backgroundColor: 'red'}}/>
-      <div style={{backgroundColor: 'yellow'}}/>
-      <div style={{backgroundColor: 'green'}}/>
+    <>
+      <Side position={position}/>
+      <AppStyle
+        XPosition={position[0] * 100 / NXSlides}
+        YPosition={position[1] * 100 / NYSlides}
+        width={NXSlides * 100}
+        height={NYSlides * 100}
+        onKeyDown={() => {console.log('hi')}}
+      >
+        <div style={{backgroundColor: 'black'}} />
+        <Background/>
+        <Background/>
+        <Background/>
 
-      <div style={{backgroundColor: 'red'}}/>
-      <div style={{backgroundColor: 'yellow'}}/>
-      <Tutorial pressedRight={pressedRight} pressedLeft={pressedLeft} pressedUp={pressedUp} pressedDown={pressedDown}/>
-      <div style={{backgroundColor: 'black'}}/>
+        <div style={{backgroundColor: 'red'}}/>
+        <div style={{backgroundColor: 'yellow'}}/>
+        <Tutorial pressedRight={pressedRight} pressedLeft={pressedLeft} pressedUp={pressedUp} pressedDown={pressedDown}/>
+        <Projects/>
 
-      <div style={{backgroundColor: 'yellow'}}/>
-      <div style={{backgroundColor: 'green'}}/>
-      <div style={{backgroundColor: 'black'}}/>
-      <div style={{backgroundColor: 'black'}}/>
-      {/* <div className='contact'>
-        <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
-          Twitter
-        </a>
-        &nbsp;|&nbsp;
-        <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
-          Github
-        </a>
-        &nbsp;|&nbsp;
-        <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
-          LinkedIn
-        </a>
-        &nbsp;|&nbsp;
-        <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
-          Resume
-        </a>
-      </div> */}
-    </AppStyle>
+        <div style={{backgroundColor: 'yellow'}}/>
+        <Background/>
+        <div style={{backgroundColor: 'black'}}/>
+        <Background/>
+        {/* <div className='contact'>
+          <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
+            Twitter
+          </a>
+          &nbsp;|&nbsp;
+          <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
+            Github
+          </a>
+          &nbsp;|&nbsp;
+          <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
+            LinkedIn
+          </a>
+          &nbsp;|&nbsp;
+          <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
+            Resume
+          </a>
+        </div> */}
+      </AppStyle>
+    </>
   );
 }
 

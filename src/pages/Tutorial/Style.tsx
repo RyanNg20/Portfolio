@@ -1,5 +1,4 @@
-import styled, { createGlobalStyle, keyframes, css } from 'styled-components';
-import { colors } from '../../colors'
+import styled from 'styled-components';
 
 export const ArrowWrapper = styled.div`
   width: fit-content;

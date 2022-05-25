@@ -1,4 +1,6 @@
 export const colors  = {
   gray: '#909090',
-  background: 'linear-gradient(#1A191F, #3C2F1F)',
+  background: 'linear-gradient(#000000 30%, #312000)',
+  purple: 'rgba(84,79,98, 0.3)',
+  orange: '#FFA800',
 }
