@@ -4,9 +4,11 @@ import Tutorial from '../pages/Tutorial';
 import Projects from '../pages/Projects';
 import Side from '../components/Side';
 import { Background } from '../components/Style';
+import About from '../pages/About';
 
 function App() {
   document.body.style.overflow = "hidden"
+
   const [position, setPosition] = useState([-2,-1])
   const [pressedRight, setPressedRight] = useState(false)
   const [pressedLeft, setPressedLeft] = useState(false)
@@ -40,11 +42,12 @@ function App() {
     'ArrowRight',
     () => setPressedRight(true),
     () => {
-      if (slidePositions.some(slidePosition => slidePosition[0] === position[0] - 1 && slidePosition[1] === position[1])) setPosition([position[0] - 1, position[1]])
+      if (slidePositions.some(slidePosition => slidePosition[0] === position[0] - 1 && slidePosition[1] === position[1]))setPosition([position[0] - 1, position[1]])
       setPressedRight(false)
     }
   );
-  useKeypress('ArrowLeft',
+  useKeypress(
+    'ArrowLeft',
     () => setPressedLeft(true),
     () => {
       if (slidePositions.some(slidePosition => slidePosition[0] === position[0] + 1 && slidePosition[1] === position[1])) setPosition([position[0] + 1, position[1]])
@@ -90,25 +93,8 @@ function App() {
 
         <div style={{backgroundColor: 'yellow'}}/>
         <Background/>
-        <div style={{backgroundColor: 'black'}}/>
+        <About/>
         <Background/>
-        {/* <div className='contact'>
-          <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
-            Twitter
-          </a>
-          &nbsp;|&nbsp;
-          <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
-            Github
-          </a>
-          &nbsp;|&nbsp;
-          <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
-            LinkedIn
-          </a>
-          &nbsp;|&nbsp;
-          <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
-            Resume
-          </a>
-        </div> */}
       </AppStyle>
     </>
   );

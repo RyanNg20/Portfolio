@@ -1,4 +1,3 @@
-import {useEffect, useState, } from 'react';
 import { ArrowWrapper } from './Style';
 import { Background } from '../../components/Style';
 import { ChevronBackOutline, ChevronForwardOutline, ChevronDownOutline, ChevronUpOutline} from 'react-ionicons'
