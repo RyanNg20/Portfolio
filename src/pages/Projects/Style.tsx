@@ -1,26 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../colors'
 
-export const BodyWrapper = styled.div`
-  flex-grow: 1;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 80px;
-  background-color: rgba(0,0,0,0.2);
-  &::-webkit-scrollbar {
-    height: 5px;
-  }
-  &::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.5);
-  }
-  &::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.5);
-    border-radius: 3px;
-  }
-`
 interface HoverProps {
   hover: boolean,
 }

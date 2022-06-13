@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import side from '../../assets/images/side.png'
 import {ReactComponent as Line1} from '../../assets/images/lines/1.svg'
 import {ReactComponent as Line2} from '../../assets/images/lines/2.svg'
@@ -40,8 +40,8 @@ export const LineWrapper = styled.div`
   z-index: 101;
 `
 interface LineProps {
-  translateX: string,
-  translateY: string,
+  translatex: string,
+  translatey: string,
   active: boolean,
 }
 /***************************************************
@@ -51,7 +51,7 @@ interface LineProps {
  **************************************************/
 export const LineStyle1 = styled(Line1)<LineProps>`
   z-index: 150;
-  transform: ${(props) => `translate(${props.translateX}, ${props.translateY})`};
+  transform: ${(props) => `translate(${props.translatex}, ${props.translatey})`};
   stroke-dashoffset: ${(props) => props.active?'0':'424.378173828125'}px;
   stroke-dasharray: 424.378173828125px;
   transition: stroke-dashoffset 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
@@ -63,7 +63,7 @@ export const LineStyle1 = styled(Line1)<LineProps>`
  **************************************************/
 export const LineStyle2 = styled(Line2)<LineProps>`
   z-index: 150;
-  transform: ${(props) => `translate(${props.translateX}, ${props.translateY})`};
+  transform: ${(props) => `translate(${props.translatex}, ${props.translatey})`};
   stroke-dashoffset: ${(props) => props.active?'0':'194.9899139404297'}px;
   stroke-dasharray: 194.9899139404297px;
   transition: stroke-dashoffset 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
@@ -75,7 +75,7 @@ export const LineStyle2 = styled(Line2)<LineProps>`
  **************************************************/
 export const LineStyle3 = styled(Line3)<LineProps>`
   z-index: 150;
-  transform: ${(props) => `translate(${props.translateX}, ${props.translateY})`};
+  transform: ${(props) => `translate(${props.translatex}, ${props.translatey})`};
   stroke-dashoffset: ${(props) => props.active?'0':'395.8667907714844'}px;
   stroke-dasharray: 395.8667907714844px;
   transition: stroke-dashoffset 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
@@ -87,14 +87,14 @@ export const LineStyle3 = styled(Line3)<LineProps>`
  **************************************************/
 export const LineStyle4 = styled(Line4)<LineProps>`
   z-index: 150;
-  transform: ${(props) => `translate(${props.translateX}, ${props.translateY})`};
+  transform: ${(props) => `translate(${props.translatex}, ${props.translatey})`};
   stroke-dashoffset: ${(props) => props.active?'0':'274.1213073730469'}px;
   stroke-dasharray: 274.1213073730469px;
   transition: stroke-dashoffset 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
 `
 interface TextProps {
-  translateX: string,
-  translateY: string,
+  translatex: string,
+  translatey: string,
   active: boolean,
 }
 export const Text = styled.h3<TextProps>`
@@ -103,7 +103,7 @@ export const Text = styled.h3<TextProps>`
   color: white;
   font-weight: 300;
   font-family: Roboto;
-  transform: ${(props) => `translate(${props.translateX}, ${props.translateY})`} scaleY(1.1111);
+  transform: ${(props) => `translate(${props.translatex}, ${props.translatey})`} scaleY(1.1111);
   opacity: ${(props) => props.active?1:0};
   transition: opacity 1s;
 `

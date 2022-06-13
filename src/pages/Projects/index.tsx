@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Background, Header, HeaderTitle, LeftBlock, RightWrapper, } from '../../components/Style';
-import { BodyWrapper, ProjectWrapper, ProjectImage, Logo, ProjectContentWrapper, ProjectDescription, ProjectGradient } from './Style'
+import { Background, Header, HeaderTitle, LeftBlock, RightWrapper, ScrollWrapper } from '../../components/Style';
+import { ProjectWrapper, ProjectImage, Logo, ProjectContentWrapper, ProjectDescription, ProjectGradient } from './Style'
+import { onWheel } from '../../components/ScrollFunctions';
 import  project1 from '../../assets/images/project/1.png'
 import  project2 from '../../assets/images/project/2.png'
 import  project3 from '../../assets/images/project/3.png'
@@ -14,7 +15,6 @@ const Projects = () => {
   const [hover3, setHover3] = useState(false)
   const empty = [null, null, null]
 
-  const onWheel = (e:any) => e.currentTarget.scrollLeft += e.deltaY
   const onMouseOver = (fn: (arg0: boolean) => void) => fn(true)
   const onMouseLeave = (fn: (arg0: boolean) => void) => fn(false)
   
@@ -27,7 +27,7 @@ const Projects = () => {
             Projects
           </HeaderTitle>
         </Header>
-        <BodyWrapper onWheel={onWheel}>
+        <ScrollWrapper onWheel={onWheel}>
           {empty.map((_, index) => {
             const links = ['https://github.com/jacobjk01/scoop', 'https://clipto.io', 'https://jennyluvsfood.gumroad.com/l/OmXoR']
             const projects = [project1,project2,project3]
@@ -43,7 +43,14 @@ const Projects = () => {
             const colors = ['rgb(49,84,165)','rgb(237,230,65)','rgb(255,0,0)']
             const heights = ['50px', '50px', '100px']
             return (
-              <ProjectWrapper onMouseOver={() => onMouseOver(setHovers[index])} onMouseLeave={() => onMouseLeave(setHovers[index])} hover={hovers[index]} href={links[index]} target="_blank">
+              <ProjectWrapper
+                onMouseOver={() => onMouseOver(setHovers[index])}
+                onMouseLeave={() => onMouseLeave(setHovers[index])}
+                hover={hovers[index]}
+                href={links[index]}
+                target="_blank"
+                key={index}
+              >
                 <ProjectImage project={projects[index]} hover={hovers[index]}/>
                 {/* <ProjectGradient hover={hovers[index]} color={colors[index]}/> */}
                 <ProjectContentWrapper>
@@ -55,7 +62,7 @@ const Projects = () => {
               </ProjectWrapper>
             )
           })}
-        </BodyWrapper>
+        </ScrollWrapper>
       </RightWrapper>
     </Background>
   )

@@ -1,10 +1,14 @@
 import { useEffect, useState, } from 'react';
-import { AppStyle, Link} from './Style'
+import { AppStyle } from './Style'
+import { Background } from '../components/Style';
+import Side from '../components/Side';
 import Tutorial from '../pages/Tutorial';
 import Projects from '../pages/Projects';
-import Side from '../components/Side';
-import { Background } from '../components/Style';
 import About from '../pages/About';
+import Art from '../pages/Art';
+import CommissionForm from '../pages/CommissionForm';
+import CommissionList from '../pages/CommissionList';
+import TOS from '../pages/TOS';
 
 function App() {
   document.body.style.overflow = "hidden"
@@ -81,17 +85,17 @@ function App() {
         height={NYSlides * 100}
         onKeyDown={() => {console.log('hi')}}
       >
-        <div style={{backgroundColor: 'black'}} />
+        <TOS/>
         <Background/>
         <Background/>
         <Background/>
 
-        <div style={{backgroundColor: 'red'}}/>
-        <div style={{backgroundColor: 'yellow'}}/>
+        <CommissionForm/>
+        <Art/>
         <Tutorial pressedRight={pressedRight} pressedLeft={pressedLeft} pressedUp={pressedUp} pressedDown={pressedDown}/>
         <Projects/>
 
-        <div style={{backgroundColor: 'yellow'}}/>
+        <CommissionList/>
         <Background/>
         <About/>
         <Background/>
