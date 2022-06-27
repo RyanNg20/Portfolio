@@ -31,7 +31,11 @@ const Side = (props:SideProps) => {
     while (actives[i] == true) i++
 
     for (const property in pageNames) {
-      if (pageNames[property][0] === props.position[0] && pageNames[property][1] === props.position[1] && !texts.includes(property)) {
+      if (
+          pageNames[property as keyof typeof pageNames][0] === props.position[0] &&
+          pageNames[property as keyof typeof pageNames][1] === props.position[1] &&
+          !texts.includes(property)
+        ) {
         console.log('hi')
         let temp = texts
         temp[i] = property
