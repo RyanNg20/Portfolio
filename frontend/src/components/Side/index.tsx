@@ -4,7 +4,12 @@ import { SideWrapper, SideImage, LineStyle1, LineStyle2, LineStyle3, LineStyle4,
 
 interface SideProps{
   position: number[]
-} 
+}
+interface PagePositionProps{
+  Projects: number[],
+  About: number[],
+  Art: number[],
+}
 
 const Side = (props:SideProps) => {
   const lineX = ['15px','15px','0px','0px']
@@ -16,7 +21,7 @@ const Side = (props:SideProps) => {
   const [texts, setTexts] = useState(['','','',''])
   const [actives, setActives] = useState([false,false,false,false])
   const [showModal, setShowModal] = useState(false)
-  let pageNames: any = {
+  let pageNames: PagePositionProps = {
     Projects: [-3,-1],
     About: [-2,-2],
     Art: [-1,-1],
@@ -49,9 +54,9 @@ const Side = (props:SideProps) => {
   }, [actives[2]])
   return (
     <>
-      <Modal showModal={showModal} setShowModal={setShowModal}/>
+      {/* <Modal showModal={showModal} setShowModal={setShowModal}/> */}
       <SideWrapper position={props.position}>
-        <LineWrapper>
+        {/* <LineWrapper>
           {Lines.map((Line, index) => {
             return (
               <div key={index}>
@@ -62,7 +67,7 @@ const Side = (props:SideProps) => {
               </div>
             )
           })}
-        </LineWrapper>
+        </LineWrapper> */}
         <SideImage position={props.position}/>
       </SideWrapper>
     </>

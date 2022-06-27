@@ -1,4 +1,4 @@
-import { useEffect, useState, } from 'react';
+import React, { useEffect, useState, } from 'react';
 import { AppStyle } from './Style'
 import { Background } from '../components/Style';
 import Side from '../components/Side';
@@ -23,7 +23,7 @@ function App() {
   const NXSlides = 4
   const NYSlides = 3
 
-  const useKeypress = (key: any, keyDownAction: any, keyUpAction: any) => {
+  const useKeypress = (key: string, keyDownAction: () => void, keyUpAction: () => void) => {
     useEffect(() => {
       function onKeydown(e: any) {
         if (e.key === key) keyDownAction()
