@@ -1,18 +1,9 @@
 import {useEffect, useState } from 'react';
-import { Background, Header, HeaderTitle, LeftBlock, RightWrapper} from '../../components/Style';
+import { Background, Header, HeaderTitle, LeftBlock, RightWrapper, H4Text} from '../../components/Style';
+import { ListWrapper, RowWrapper, RowLine } from './Style';
+import moment from 'moment'
 
 const CommissionList = () => {
-  const artLinks = [
-    require('../../assets/images/art/1.png'),
-    require('../../assets/images/art/2.png'),
-    require('../../assets/images/art/3.png'),
-    require('../../assets/images/art/4.png'),
-    require('../../assets/images/art/5.png'),
-    require('../../assets/images/art/6.png'),
-    require('../../assets/images/art/7.png'),
-    require('../../assets/images/art/8.jpg'),
-    require('../../assets/images/art/9.jpg'),
-  ]
 
   return (
     <Background>
@@ -23,6 +14,15 @@ const CommissionList = () => {
             Commission List
           </HeaderTitle>
         </Header>
+        <ListWrapper>
+          <RowWrapper>
+            <H4Text>Ryan Ng</H4Text>
+            <H4Text>Full Body</H4Text>
+            <H4Text>{moment(new Date()).format('MM' + '/' + 'DD'+ '/' + 'YYYY')}</H4Text>
+            <H4Text style={{flexGrow: 1, marginLeft: 'auto', marginRight: 'auto', display: 'flex'}}>Pending</H4Text>
+          </RowWrapper>
+          <RowLine/>
+        </ListWrapper>
       </RightWrapper>
     </Background>
   )

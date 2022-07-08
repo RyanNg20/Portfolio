@@ -36,12 +36,15 @@ export const ContactWrapper = styled.a<ContactWrapperProps>`
   color: white;
   text-decoration: none;
   transition: background-color 0.5s, color 0.5s;
-  ${(props) => props.index != 2 && props.index != 3?`
-    &:hover{
-      background-color: ${colors.orange};
-      color: black;
-    }
-  `:''}
+  &:hover{
+    background-color: ${colors.orange};
+    color: black;
+  }
+`
+export const ContactClipboardWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
 `
 
 const IconStyling = `
@@ -58,4 +61,12 @@ export const StyledTwitter = styled(Twitter)`${IconStyling} margin-right: 15px;`
 export const AboutWrapper = styled.div`
   width: 100%;
   flex-grow: 1;
+`
+
+export const Clipboard = styled.div`
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  transform: translateY(-30px);
+  margin-left: 10px;
+  padding: 8px 15px;
 `

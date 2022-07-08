@@ -1,6 +1,6 @@
 import {useEffect, useState } from 'react';
 import { Background, Header, HeaderTitle, LeftBlock, RightWrapper, ScrollWrapper } from '../../components/Style';
-import { ArtWrapper, ArtStyling } from './Style';
+import { ArtWrapper, ArtStyling, ArtGradient } from './Style';
 import { onWheel } from '../../components/ScrollFunctions';
 
 const Art = () => {
@@ -25,6 +25,7 @@ const Art = () => {
             Art
           </HeaderTitle>
         </Header>
+        <ArtGradient/>
         <ScrollWrapper onWheel={onWheel}>
           <ArtWrapper>
             {artLinks.map((art, index) => {

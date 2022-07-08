@@ -12,8 +12,8 @@ export const ScrollWrapper = styled.div`
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 80px;
+  padding-right: 80px;
   padding-top: 80px;
   background-color: rgba(0,0,0,0.2);
   &::-webkit-scrollbar {
@@ -37,11 +37,12 @@ export const RightWrapper = styled.div`
   width: calc(100vw - clamp(210px, 20%,300px));
   display: flex;
   flex-direction: column;
+  position: relative;
 `
 
 export const Header = styled.div`
   width: 100%;
-  height: 200px;
+  height: 180px;
   display: flex;
 `
 export const HeaderTitle = styled.h1`
@@ -51,5 +52,19 @@ export const HeaderTitle = styled.h1`
   margin-top: auto;
   margin-bottom: auto;
   margin-left: 100px;
-  display: flex;
+`
+export const HeaderSubText = styled.h4`
+  font-size: 20px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 100;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 50px;
+`
+export const H4Text = styled.h4`
+  font-size: 20px;
+  color: white;
+  font-weight: 100;
+  line-height: 40px;
+  margin: 0px;
 `
