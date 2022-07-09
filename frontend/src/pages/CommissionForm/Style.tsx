@@ -31,8 +31,8 @@ export const FormDropdown = styled.select`
   background-color: rgba(0,0,0,0.3);
   border-style: none;
   border-radius: 5px;
-  padding: 10px 45px 10px 20px;
-  font-size: 20px;
+  padding: 15px 45px 15px 20px;
+  font-size: 18px;
   color: white;
   font-weight: 100;
   margin: 15px;
@@ -48,8 +48,14 @@ export const FormDropdown = styled.select`
     outline: 1px solid rgba(255,255,255,0.5);
   }
 `
+
+export const FormOption = styled.option`
+  background-color: rgba(0,0,0,0.8);
+`
 export const FormSubmit = styled.input`
-  float: right;
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
   background-color: ${colors.orange};
   color: white;
   border: none;
@@ -58,6 +64,7 @@ export const FormSubmit = styled.input`
   font-family: Roboto;
   font-weight: 100;
   font-size: 18px;
+  width: fit-content;
   transition: background-color 0.3s, color 0.3s;
   &:hover {
     background-color: white;

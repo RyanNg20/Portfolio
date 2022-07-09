@@ -1,7 +1,7 @@
 import { ArrowWrapper } from './Style';
 import { Background } from '../../components/Style';
 import { ChevronBackOutline, ChevronForwardOutline, ChevronDownOutline, ChevronUpOutline} from 'react-ionicons'
-
+import { colors } from '../../colors'
 interface TutorialProps {
   pressedRight: boolean,
   pressedLeft: boolean,

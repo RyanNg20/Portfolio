@@ -8,14 +8,14 @@ interface AppProps {
   height: number,
 }
 export const AppStyle = styled.div<AppProps>`
-  background: ${colors.background};
+background: ${colors.background};
   height: ${(props) => props.height}vh;
   width: ${(props) => props.width}vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   font-family: Roboto;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
   &::-webkit-scrollbar {
     display: none;

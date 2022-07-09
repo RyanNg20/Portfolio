@@ -5,6 +5,7 @@ export const ArtWrapper = styled.div`
 `
 
 export const ArtStyling = styled.img`
+  border-radius: 20px;
   height: 620px;
   margin: 0px 25px;
 `

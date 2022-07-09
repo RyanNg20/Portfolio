@@ -7,8 +7,14 @@ const About = () => {
   const icons = [StyledLinkedin, StyledGithub, StyledDiscord, StyledGmail, StyledInstagram, StyledTwitter]
   const iconTexts = ["","","Taku#0605","ropher20@gmail.com","@ferreroropher","@FerreroRopher"]
   const links = ["https://www.linkedin.com/in/ropher20/", "https://github.com/RyanNg20", undefined, undefined, "https://www.instagram.com/ferreroropher/", "https://twitter.com/FerreroRopher"]
-  const [showClipboard, setShowClipboard] = useState([false, false])
-  console.log(showClipboard)
+  const [showClipboard1, setShowClipboard1] = useState(false)
+  const [showClipboard2, setShowClipboard2] = useState(false)
+  useEffect(() => {
+    setTimeout(() => {
+      setShowClipboard1(false)
+      setShowClipboard2(false)
+    }, 1000)
+  }, [showClipboard1, showClipboard2])
   return (
     <Background>
       <LeftBlock/>
@@ -31,25 +37,16 @@ const About = () => {
           {icons.map((Icon, index) => {
             return (
               <ContactClipboardWrapper>
-                {((index == 2 || index == 3) && showClipboard[index]) &&
-                  <Clipboard>Copy to Clipboard</Clipboard>
-                }
+                <Clipboard index={index} clipboard1={showClipboard1} clipboard2={showClipboard2}>Copied to Clipboard</Clipboard>
                 <ContactWrapper index={index} href={links[index]} target="_blank" rel="noreferrer" key={index}
                   onClick={() => {
                     if (index == 2 || index == 3) {
                       navigator.clipboard.writeText(iconTexts[index])
+                      if (index == 2)
+                        setShowClipboard1(true)
+                      else if (index == 3)
+                        setShowClipboard2(true)
                     }
-                  }}
-                  onMouseEnter={() => {
-                    let temp = showClipboard
-                    temp[index - 2] = true
-                    setShowClipboard(temp)
-                    console.log('hi')
-                  }}
-                  onMouseLeave={() => {
-                    let temp = showClipboard
-                    temp[index - 2] = false
-                    setShowClipboard(temp)
                   }}
                 >
                   <Icon/>
@@ -58,23 +55,6 @@ const About = () => {
               </ContactClipboardWrapper>
             )
           })}
-          {/* <div className='contact'>
-            <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
-              Twitter
-            </a>
-            &nbsp;|&nbsp;
-            <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
-              Github
-            </a>
-            &nbsp;|&nbsp;
-            <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
-              LinkedIn
-            </a>
-            &nbsp;|&nbsp;
-            <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noreferrer" className='link'>
-              Resume
-            </a>
-          </div> */}
 
         </ContactsWrapper>
       </RightWrapper>

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import side from '../../assets/images/side.png'
+import background from '../../assets/images/side.png'
 import {ReactComponent as Line1} from '../../assets/images/lines/1.svg'
 import {ReactComponent as Line2} from '../../assets/images/lines/2.svg'
 import {ReactComponent as Line3} from '../../assets/images/lines/3.svg'
@@ -16,19 +16,19 @@ export const SideWrapper = styled.div<PositionProps>`
   height: 100vh;
   width: clamp(210px, 20%,300px);
   z-index: 100;
-  opacity: ${(props) => props.position[0] === -2 && props.position[1] === -1?0:1};
+  opacity: ${(props) => props.position[0] === -2 && props.position[1] === -1?0:0.3};
   transition: opacity 1s;
   overflow: hidden;
   display: flex;
   justify-content: center;
 `
 export const SideImage = styled.div<PositionProps>`
-  background-image: url(${side});
+  background: url(${background});
   background-size: cover;
   position: absolute;
   top: 0px;
   transition: opacity 1s;
-  opacity: ${(props) => props.position[0] === -2 && props.position[1] === -1?0:0.3};
+  opacity: ${(props) => props.position[0] === -2 && props.position[1] === -1?0:1};
   height: 100vh;
   width: 300px;
   z-index: 100;

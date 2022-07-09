@@ -5,15 +5,17 @@ import { onWheel } from '../../components/ScrollFunctions';
 
 const Art = () => {
   const artLinks = [
-    require('../../assets/images/art/1.png'),
-    require('../../assets/images/art/2.png'),
+    require('../../assets/images/art/1.jpg'),
+    require('../../assets/images/art/2.jpg'),
     require('../../assets/images/art/3.png'),
     require('../../assets/images/art/4.png'),
-    require('../../assets/images/art/5.png'),
+    require('../../assets/images/art/5.jpg'),
     require('../../assets/images/art/6.png'),
     require('../../assets/images/art/7.png'),
     require('../../assets/images/art/8.jpg'),
-    require('../../assets/images/art/9.jpg'),
+    require('../../assets/images/art/9.png'),
+    require('../../assets/images/art/10.png'),
+    require('../../assets/images/art/11.png'),
   ]
 
   return (

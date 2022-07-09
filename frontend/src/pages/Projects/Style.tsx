@@ -64,7 +64,7 @@ export const Logo = styled.img<LogoProps>`
   transition: transform 0.5s;
 `
 export const ProjectDescription = styled.p<HoverProps>`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 100;
   z-index: 100;
   white-space: normal;

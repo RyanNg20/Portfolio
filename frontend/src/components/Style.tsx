@@ -6,6 +6,7 @@ export const Background = styled.div`
   width: 100vw;
   display: flex;
   background-color: ${colors.purple};
+  overflow: hidden;
 `
 export const ScrollWrapper = styled.div`
   flex-grow: 1;
@@ -43,7 +44,10 @@ export const RightWrapper = styled.div`
 export const Header = styled.div`
   width: 100%;
   height: 180px;
+  min-height: 100px;
   display: flex;
+  margin-left: 100px;
+  
 `
 export const HeaderTitle = styled.h1`
   font-size: 32px;
@@ -51,7 +55,7 @@ export const HeaderTitle = styled.h1`
   font-weight: 200;
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: 100px;
+  height: fit-content;
 `
 export const HeaderSubText = styled.h4`
   font-size: 20px;
@@ -62,7 +66,7 @@ export const HeaderSubText = styled.h4`
   margin-left: 50px;
 `
 export const H4Text = styled.h4`
-  font-size: 20px;
+  font-size: 18px;
   color: white;
   font-weight: 100;
   line-height: 40px;
